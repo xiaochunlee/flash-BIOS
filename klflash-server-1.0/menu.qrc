@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/File">
+        <file>images/jumplist_gougou.ico</file>
+        <file>images/jumplist_useronline.ico</file>
+        <file>images/taskbar_bgofnum.png</file>
+        <file>images/taskbar_unsigned.png</file>
+        <file>images/copy.png</file>
+        <file>images/jumplist_exit.ico</file>
+        <file>images/jumplist_newtask.ico</file>
+        <file>images/jumplist_newtask1.png</file>
+    </qresource>
+</RCC>

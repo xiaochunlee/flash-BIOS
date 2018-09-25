@@ -1,0 +1,26 @@
+INC=  
+LIB= -fPIC -shared -lpthread
+
+CC = cc
+##CC_FLAG=-Wall -m32
+CC_FLAG=-Wall 
+
+PRG= libflash.so
+OBJ=main.o basefunc.o data.o flashopt.o smbios.o
+SUBDIR=authenticate
+SUBOBJ=$(SUBDIR)/*.o 
+
+$(PRG):$(SUBOBJ) $(OBJ) 
+	$(CC) $(CC_FLAG) $(INC) -o $@ $(OBJ) $(SUBOBJ) $(LIB) 
+	cp $(PRG) /usr/lib/ -rf
+$(SUBOBJ):
+	$(MAKE) -C $(SUBDIR) 
+      
+.SUFFIXES: .c .o .c 
+.c.o:  
+	$(CC) $(CC_FLAG) $(INC) -c $*.c -o $*.o 
+
+.PRONY:clean
+clean:  
+	@echo "Removing linked and compiled files......"  
+	rm -f $(OBJ) $(SUBOBJ) $(PRG) 
